@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios - Colegio Público{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="banner">
+    <h1>Nuestros Servicios</h1>
+    <p>Brindamos atención integral para el bienestar de nuestros estudiantes</p>
+</div>
+
+<!-- Servicios Principales -->
+<section class="seccion">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Servicios Principales</h2>
+        
+        <div class="grid-3">
+            <!-- Comedor -->
+            <div class="tarjeta texto-centro">
+                <div class="icono-circular icono-primario">
+                    <i class="bi bi-egg-fried"></i>
+                </div>
+                <h3>Comedor Escolar</h3>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Servicio de alimentación balanceada y nutritiva preparada por profesionales en nutrición.</p>
+                <ul style="list-style: none; padding: 0; text-align: left;">
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Desayuno saludable</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Almuerzo balanceado</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Menú para alergias</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Control nutricional</li>
+                </ul>
+            </div>
+
+            <!-- Biblioteca -->
+            <div class="tarjeta texto-centro">
+                <div class="icono-circular icono-exito">
+                    <i class="bi bi-book"></i>
+                </div>
+                <h3>Biblioteca</h3>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Amplio catálogo de libros físicos y digitales para fomentar el hábito de la lectura.</p>
+                <ul style="list-style: none; padding: 0; text-align: left;">
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Más de 5,000 títulos</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Sala de lectura</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Préstamo a domicilio</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Recursos digitales</li>
+                </ul>
+            </div>
+
+            <!-- Psicología -->
+            <div class="tarjeta texto-centro">
+                <div class="icono-circular" style="background-color: #e1f5fe; color: #0288d1;">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <h3>Psicología</h3>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Acompañamiento profesional para el desarrollo emocional y social de los estudiantes.</p>
+                <ul style="list-style: none; padding: 0; text-align: left;">
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Atención individual</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Talleres grupales</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Orientación vocacional</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-check2" style="color: var(--color-exito); margin-right: 8px;"></i>Escuela para padres</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios Adicionales -->
+<section class="seccion seccion-gris">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Servicios Adicionales</h2>
+        
+        <div class="grid-4">
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-wifi" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Internet WiFi</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Conexión en todas las áreas</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-laptop" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Laboratorio</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Sala de cómputo equipada</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-hospital" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Enfermería</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Primeros auxilios</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-bus-front" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Transporte</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Movilidad escolar segura</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-music-note-beamed" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Arte y Música</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Talleres culturales</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-trophy" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Deportes</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Educación física</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-camera-video" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Seguridad</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Videovigilancia 24/7</p>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-calendar-check" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
+                <h4>Actividades</h4>
+                <p style="color: var(--color-gris); font-size: 14px;">Eventos educativos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Horarios -->
+<section class="seccion">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Horarios de Atención</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="bi bi-clock me-2"></i>Clases</td>
+                        <td>7:30 AM - 3:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-egg-fried me-2"></i>Comedor</td>
+                        <td>7:00 AM - 2:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-book me-2"></i>Biblioteca</td>
+                        <td>7:30 AM - 4:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-heart-pulse me-2"></i>Psicología</td>
+                        <td>8:00 AM - 1:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-hospital me-2"></i>Enfermería</td>
+                        <td>7:00 AM - 3:30 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

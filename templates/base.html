@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Colegio Público{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <!-- Menu de Navegacion -->
+    <nav class="menu-principal">
+        <div class="contenedor">
+            <a href="{{ url_for('inicio') }}" class="logo">
+                <img src="{{ url_for('static', filename='img/insignia.png') }}" alt="Logo" class="logo-img me-2">
+            </a>
+            
+            <button class="boton-menu" id="botonMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="enlaces" id="enlaces">
+                <a href="{{ url_for('inicio') }}">Inicio</a>
+                <a href="{{ url_for('niveles') }}">Niveles</a>
+                <a href="{{ url_for('servicios') }}">Servicios</a>
+                <a href="{{ url_for('docentes') }}">Docentes</a>
+                <a href="{{ url_for('documentos') }}">Documentos</a>
+                <a href="{{ url_for('noticias') }}">Noticias</a>
+                <a href="{{ url_for('registro') }}" class="boton-inscripcion">Inscripción</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mensajes -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="contenedor mensajes">
+                {% for category, message in messages %}
+                    <div class="alerta alerta-{{ category }}">
+                        {{ message }}
+                        <button class="cerrar-alerta" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Contenido -->
+    {% block content %}{% endblock %}
+
+    <!-- Pie de Pagina -->
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <div class="fila">
+                <div class="columna">
+                    <h3>Nuestra Señora de Fátima</h3>
+                    <p>Formando ciudadanos íntegros para el futuro</p>
+                </div>
+                
+                <div class="columna">
+                    <h4>Contacto</h4>
+                    <p><i class="bi bi-geo-alt-fill"></i> Av. Educación 123, Lima</p>
+                    <p><i class="bi bi-telephone-fill"></i> (51) 977662769</p>
+                    <p><i class="bi bi-envelope-fill"></i> info@colegio.edu.pe</p>
+                </div>
+                
+                <div class="columna">
+                    <h4>Síguenos</h4>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <!--
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="derechos">
+                <p>&copy; 2026 I.E. Nuestra Señora de Fátima. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Menu responsive
+        document.getElementById('botonMenu').addEventListener('click', function() {
+            document.getElementById('enlaces').classList.toggle('activo');
+        });
+    </script>
+</body>
+</html>

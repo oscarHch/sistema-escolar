@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}Documentos - Colegio Público{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="banner">
+    <h1>Documentos e Información</h1>
+    <p>Todo lo que necesitas saber sobre requisitos y procedimientos</p>
+</div>
+
+<!-- Requisitos de Matrícula -->
+<section class="seccion">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Requisitos de Matrícula</h2>
+        
+        <div class="grid-2">
+            <!-- Nivel Inicial -->
+            <div class="tarjeta">
+                <div style="background-color: #e8f0fe; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: var(--color-principal); margin-bottom: 5px;">
+                        <i class="bi bi-heart-fill"></i> Nivel Inicial
+                    </h3>
+                    <p style="color: var(--color-gris); font-size: 14px; margin: 0;">3 a 5 años</p>
+                </div>
+                
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Partida de nacimiento original
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        DNI del estudiante (copia)
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        DNI de ambos padres (copia)
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        3 fotos tamaño carnet
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Ficha de matrícula
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Certificado de salud
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Constancia de vacunación
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nivel Primaria -->
+            <div class="tarjeta">
+                <div style="background-color: #e6f4ea; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: var(--color-exito); margin-bottom: 5px;">
+                        <i class="bi bi-book-fill"></i> Nivel Primaria
+                    </h3>
+                    <p style="color: var(--color-gris); font-size: 14px; margin: 0;">6 a 11 años (1° a 6°)</p>
+                </div>
+                
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Partida de nacimiento original
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        DNI del estudiante (copia)
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        DNI de ambos padres (copia)
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        3 fotos tamaño carnet
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Ficha de matrícula
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Certificado de estudios
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <i class="bi bi-check-circle-fill" style="color: var(--color-exito); margin-right: 10px;"></i>
+                        Constancia de no adeudo
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Horarios de Clases -->
+<section class="seccion seccion-gris">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Horarios de Clases</h2>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Turno</th>
+                        <th>Entrada</th>
+                        <th>Salida</th>
+                        <th>Recreo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inicial</strong></td>
+                        <td>Mañana</td>
+                        <td>8:00 AM</td>
+                        <td>12:00 PM</td>
+                        <td>10:00 - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primaria (1° - 3°)</strong></td>
+                        <td>Mañana</td>
+                        <td>7:45 AM</td>
+                        <td>1:00 PM</td>
+                        <td>10:00 - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primaria (4° - 6°)</strong></td>
+                        <td>Mañana</td>
+                        <td>7:30 AM</td>
+                        <td>1:30 PM</td>
+                        <td>10:00 - 10:30 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="background-color: #e8f0fe; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <p style="margin: 0; color: var(--color-texto);">
+                    <i class="bi bi-info-circle-fill" style="color: var(--color-principal); margin-right: 10px;"></i>
+                    <strong>Nota:</strong> Los horarios pueden variar según actividades especiales. Se comunicará con anticipación cualquier cambio.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reglamento -->
+<section class="seccion">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Reglamento Interno</h2>
+        
+        <div class="grid-2">
+            <div class="tarjeta">
+                <div style="background-color: #e6f4ea; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 style="margin: 0;">
+                        <i class="bi bi-person-check-fill" style="color: var(--color-exito);"></i>
+                        Derechos del Estudiante
+                    </h4>
+                </div>
+                <ol style="color: var(--color-gris);">
+                    <li style="margin-bottom: 10px;">Recibir educación de calidad y gratuita</li>
+                    <li style="margin-bottom: 10px;">Ser tratado con respeto y dignidad</li>
+                    <li style="margin-bottom: 10px;">Participar en actividades extracurriculares</li>
+                    <li style="margin-bottom: 10px;">Expresar opiniones de manera respetuosa</li>
+                    <li style="margin-bottom: 10px;">Recibir apoyo académico y emocional</li>
+                    <li style="margin-bottom: 10px;">Utilizar las instalaciones del colegio</li>
+                    <li style="margin-bottom: 10px;">Ser evaluado con justicia</li>
+                </ol>
+            </div>
+            
+            <div class="tarjeta">
+                <div style="background-color: #fef7e0; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 style="margin: 0;">
+                        <i class="bi bi-clipboard-check-fill" style="color: var(--color-amarillo);"></i>
+                        Deberes del Estudiante
+                    </h4>
+                </div>
+                <ol style="color: var(--color-gris);">
+                    <li style="margin-bottom: 10px;">Asistir puntualmente a clases</li>
+                    <li style="margin-bottom: 10px;">Cumplir con tareas y trabajos</li>
+                    <li style="margin-bottom: 10px;">Respetar a docentes y compañeros</li>
+                    <li style="margin-bottom: 10px;">Cuidar instalaciones y materiales</li>
+                    <li style="margin-bottom: 10px;">Portar correctamente el uniforme</li>
+                    <li style="margin-bottom: 10px;">Participar en actividades escolares</li>
+                    <li style="margin-bottom: 10px;">Mantener conducta apropiada</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Descargas -->
+<section class="seccion seccion-gris">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Documentos para Descargar</h2>
+        
+        <div class="grid-3">
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-file-earmark-pdf-fill" style="font-size: 64px; color: #dc2626; margin-bottom: 20px;"></i>
+                <h4>Ficha de Matrícula</h4>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Formato para inscripción</p>
+                <a href="#" class="boton boton-primario">
+                    <i class="bi bi-download"></i> Descargar
+                </a>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-file-earmark-pdf-fill" style="font-size: 64px; color: #dc2626; margin-bottom: 20px;"></i>
+                <h4>Reglamento Completo</h4>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Normativa institucional</p>
+                <a href="#" class="boton boton-primario">
+                    <i class="bi bi-download"></i> Descargar
+                </a>
+            </div>
+            
+            <div class="tarjeta texto-centro">
+                <i class="bi bi-file-earmark-pdf-fill" style="font-size: 64px; color: #dc2626; margin-bottom: 20px;"></i>
+                <h4>Lista de Útiles</h4>
+                <p style="color: var(--color-gris); margin-bottom: 20px;">Materiales por grado</p>
+                <a href="#" class="boton boton-primario">
+                    <i class="bi bi-download"></i> Descargar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

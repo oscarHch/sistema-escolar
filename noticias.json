@@ -1,0 +1,34 @@
+{
+  "noticias": [
+    {
+      "id": 3,
+      "titulo": "Comunicado Importante - Suspensión de Clases",
+      "descripcion": "Por motivos de mantenimiento de las instalaciones, las clases del día 30 de marzo serán suspendidas.",
+      "categoria": "importante",
+      "categoria_nombre": "Importante",
+      "fecha": "2026-03-18",
+      "fecha_mostrar": "18 de Marzo, 2026",
+      "imagen": "static/img/noticias/not3.png"
+    },
+    {
+      "id": 2,
+      "titulo": "¡Feliz Año Nuevo 2026!",
+      "descripcion": "La familia de Nuestra Señora de Fátima les desea un próspero Año Nuevo lleno de aprendizaje, éxitos y momentos inolvidables.",
+      "categoria": "eventos",
+      "categoria_nombre": "Eventos",
+      "fecha": "2026-01-01",
+      "fecha_mostrar": "1 de Enero, 2026",
+      "imagen": "static/img/noticias/not2.jpg"
+    },
+    {
+      "id": 1,
+      "titulo": "Primer Lugar en Olimpiadas de Matemáticas",
+      "descripcion": "Nuestros estudiantes obtuvieron el primer lugar en la competencia regional de matemáticas.",
+      "categoria": "academico",
+      "categoria_nombre": "Académico",
+      "fecha": "2025-12-01",
+      "fecha_mostrar": "1 de Diciembre, 2025",
+      "imagen": "static/img/noticias/not1.jpg"
+    }
+  ]
+}

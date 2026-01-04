@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Noticias y Eventos - Colegio Público{% endblock %}
+
+{% block content %}
+<!-- Banner -->
+<div class="banner">
+    <h1>Noticias y Eventos</h1>
+    <p>Conoce lo que está pasando en nuestra comunidad educativa</p>
+</div>
+
+<!-- Filtros -->
+<section style="padding: 30px 0; background-color: var(--color-gris-claro);">
+    <div class="contenedor texto-centro">
+        <button class="boton boton-filtro activo" onclick="filtrarNoticias('all')">Todos</button>
+        <button class="boton boton-filtro" onclick="filtrarNoticias('eventos')">Eventos</button>
+        <button class="boton boton-filtro" onclick="filtrarNoticias('academico')">Académico</button>
+        <button class="boton boton-filtro" onclick="filtrarNoticias('deportes')">Deportes</button>
+        <button class="boton boton-filtro" onclick="filtrarNoticias('cultura')">Cultura</button>
+        <button class="boton boton-filtro" onclick="filtrarNoticias('importante')">Importante</button>
+    </div>
+</section>
+
+<!-- Galería de Noticias -->
+<section class="seccion">
+    <div class="contenedor">
+        <div class="grid-3" id="galeria-noticias">
+            {% for noticia in noticias %}
+            <div class="tarjeta item-noticia" data-categoria="{{ noticia.categoria }}">
+                <img src="{{ noticia.imagen }}" alt="{{ noticia.titulo }}">
+                <span class="badge 
+                    {% if noticia.categoria == 'eventos' %}badge-primario
+                    {% elif noticia.categoria == 'academico' %}badge-exito
+                    {% elif noticia.categoria == 'deportes' %}badge-advertencia
+                    {% elif noticia.categoria == 'importante' %}badge-importante
+                    {% else %}badge-primario{% endif %}">
+                    {{ noticia.categoria_nombre }}
+                </span>
+                <h3>{{ noticia.titulo }}</h3>
+                <p style="color: #6b7280; font-size: 14px; margin-bottom: 10px;">
+                    <i class="bi bi-calendar3"></i> {{ noticia.fecha_mostrar }}
+                </p>
+                <p>{{ noticia.descripcion }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+.boton-filtro {
+    background-color: white;
+    color: var(--color-gris);
+    border: 1px solid #e8eaed;
+    margin: 5px;
+}
+
+.boton-filtro:hover {
+    background-color: var(--color-gris-claro);
+}
+
+.boton-filtro.activo {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.item-noticia {
+    transition: all 0.3s ease;
+}
+
+.item-noticia.oculto {
+    display: none;
+}
+</style>
+
+<script>
+function filtrarNoticias(categoria) {
+    const items = document.querySelectorAll('.item-noticia');
+    const botones = document.querySelectorAll('.boton-filtro');
+    
+    // Actualizar botones activos
+    botones.forEach(btn => {
+        btn.classList.remove('activo');
+    });
+    event.target.classList.add('activo');
+    
+    // Filtrar items
+    items.forEach(item => {
+        if (categoria === 'all' || item.dataset.categoria === categoria) {
+            item.classList.remove('oculto');
+        } else {
+            item.classList.add('oculto');
+        }
+    });
+}
+</script>
+{% endblock %}

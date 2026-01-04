@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Niveles Educativos - Colegio Público{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="banner">
+    <h1>Niveles Educativos</h1>
+    <p>Educación integral desde los primeros años hasta la primaria</p>
+</div>
+
+<!-- Nivel Inicial -->
+<section class="seccion">
+    <div class="contenedor">
+        <div class="grid-2">
+            <div>
+                <div class="icono-circular icono-primario">
+                    <i class="bi bi-heart-fill"></i>
+                </div>
+                <h2 style="text-align: center; color: var(--color-principal); margin-bottom: 15px;">Nivel Inicial</h2>
+                <p style="text-align: center; color: var(--color-gris); margin-bottom: 30px;"><strong>3 a 5 años</strong></p>
+                <p>En el nivel inicial, fomentamos el desarrollo integral de los niños a través del juego y la exploración. Nuestro enfoque pedagógico se basa en el aprendizaje significativo y el desarrollo de habilidades socioemocionales.</p>
+                <ul style="margin-top: 20px;">
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Estimulación temprana</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Desarrollo psicomotriz</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Juego libre y dirigido</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Arte y creatividad</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Socialización y valores</li>
+                </ul>
+            </div>
+            <div>
+                <img src="static/img/niveles/inicial.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Nivel Inicial">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Nivel Primaria -->
+<section class="seccion seccion-gris">
+    <div class="contenedor">
+        <div class="grid-2">
+            <div>
+                <img src="static/img/niveles/primaria.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="Nivel Primaria">
+            </div>
+            <div>
+                <div class="icono-circular icono-exito">
+                    <i class="bi bi-book-fill"></i>
+                </div>
+                <h2 style="text-align: center; color: var(--color-exito); margin-bottom: 15px;">Nivel Primaria</h2>
+                <p style="text-align: center; color: var(--color-gris); margin-bottom: 30px;"><strong>1° a 6° grado</strong></p>
+                <p>La educación primaria se centra en consolidar las competencias básicas de lectura, escritura y matemáticas, mientras desarrollamos el pensamiento crítico y la autonomía del estudiante.</p>
+                <ul style="margin-top: 20px;">
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Comprensión lectora avanzada</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Razonamiento matemático</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Ciencia y tecnología</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Educación física y deportes</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--color-exito);"></i> Inglés como segundo idioma</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="seccion">
+    <div class="contenedor texto-centro">
+        <h3 style="margin-bottom: 30px;">¿Listo para ser parte de nuestra comunidad educativa?</h3>
+        <a href="{{ url_for('registro') }}" class="boton boton-primario boton-grande">Inscríbete Ahora</a>
+    </div>
+</section>
+
+{% endblock %}
