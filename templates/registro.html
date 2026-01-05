@@ -16,7 +16,9 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <div class="tarjeta">
                 <div class="texto-centro" style="margin-bottom: 30px;">
-                    <i class="bi bi-pencil-square" style="font-size: 64px; color: var(--color-principal);"></i>
+                    <img src="{{ url_for('static', filename='img/insignia_v2.jpg') }}" 
+                        alt="Insignia del Colegio" 
+                        style="width: 120px; margin-bottom: 0;">
                     <h2 style="margin-top: 20px; margin-bottom: 10px;">Solicitud de Información</h2>
                     <p style="color: var(--color-gris);">Todos los campos son obligatorios</p>
                 </div>
@@ -26,27 +28,27 @@
                     <div class="campo-formulario">
                         <label>
                             <i class="bi bi-person-fill" style="color: var(--color-principal);"></i>
-                            Nombre Completo del Padre/Madre/Apoderado
+                            Nombre completo del APODERADO
                         </label>
                         <input type="text" name="nombre_padre" 
-                               placeholder="Ej: Juan Carlos Pérez López" required>
+                                placeholder="Ej: Juan Carlos Pérez López" required>
                     </div>
 
                     <!-- Nombre del Alumno -->
                     <div class="campo-formulario">
                         <label>
                             <i class="bi bi-person-badge-fill" style="color: var(--color-principal);"></i>
-                            Nombre Completo del Alumno
+                            Nombre completo del ALUMNO
                         </label>
                         <input type="text" name="nombre_alumno" 
-                               placeholder="Ej: María Pérez García" required>
+                                placeholder="Ej: María Pérez García" required>
                     </div>
 
                     <!-- Grado de Interés -->
                     <div class="campo-formulario">
                         <label>
                             <i class="bi bi-mortarboard-fill" style="color: var(--color-principal);"></i>
-                            Grado de Interés
+                            Grado solicitado
                         </label>
                         <select name="grado" required>
                             <option value="" disabled selected>Seleccione un grado...</option>
@@ -70,12 +72,12 @@
                     <div class="campo-formulario">
                         <label>
                             <i class="bi bi-telephone-fill" style="color: var(--color-principal);"></i>
-                            Teléfono de Contacto
+                            Teléfono de contacto
                         </label>
                         <input type="tel" name="telefono" 
-                               placeholder="Ej: 987654321" 
-                               pattern="[0-9]{9}" 
-                               title="Ingrese 9 dígitos" required>
+                                placeholder="Ej: 987654321" 
+                                pattern="[0-9]{9}" 
+                                title="Ingrese 9 dígitos" required>
                         <small style="color: var(--color-gris); display: block; margin-top: 5px;">
                             Ingrese un número de 9 dígitos
                         </small>
@@ -85,22 +87,22 @@
                     <div class="campo-formulario">
                         <label>
                             <i class="bi bi-chat-left-text-fill" style="color: var(--color-principal);"></i>
-                            Mensaje Adicional
+                            Mensaje adicional
                         </label>
                         <textarea name="mensaje" rows="5" 
-                                  placeholder="Cuéntanos sobre tu interés en nuestro colegio, horarios preferidos, o cualquier consulta adicional..." 
-                                  required></textarea>
+                                placeholder="Cuéntanos sobre tu interés en nuestro colegio, horarios preferidos, o cualquier consulta adicional..." 
+                                required></textarea>
                     </div>
 
                     <!-- Términos -->
                     <div style="margin-bottom: 25px;">
                         <label style="display: flex; align-items: start; cursor: pointer;">
                             <input type="checkbox" required 
-                                   style="margin-right: 10px; margin-top: 4px; width: 18px; height: 18px;">
+                                    style="margin-right: 10px; margin-top: 4px; width: 18px; height: 18px;">
                             <span style="color: var(--color-gris); font-size: 14px;">
                                 Acepto que el colegio se contacte conmigo y he leído el 
                                 <a href="{{ url_for('documentos') }}" target="_blank" 
-                                   style="color: var(--color-principal); text-decoration: underline;">reglamento interno</a>
+                                    style="color: var(--color-principal); text-decoration: underline;">Reglamento Interno</a>
                             </span>
                         </label>
                     </div>
@@ -108,13 +110,13 @@
                     <!-- Botón -->
                     <button type="submit" class="boton boton-primario boton-grande" 
                             style="width: 100%; font-size: 18px;">
-                        <i class="bi bi-send-fill"></i> Enviar Solicitud
+                        Enviar Solicitud
                     </button>
                 </form>
             </div>
 
             <!-- Información de Contacto -->
-            <div class="grid-3" style="margin-top: 50px;">
+            <div class="grid-2" style="margin-top: 50px;">
                 <div class="tarjeta texto-centro">
                     <i class="bi bi-geo-alt-fill" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
                     <h5>Visítanos</h5>
@@ -128,14 +130,6 @@
                     <h5>Llámanos</h5>
                     <p style="color: var(--color-gris); font-size: 14px; margin: 0;">
                         (01) 234-5678<br>Lun - Vie: 8AM - 5PM
-                    </p>
-                </div>
-                
-                <div class="tarjeta texto-centro">
-                    <i class="bi bi-envelope-fill" style="font-size: 48px; color: var(--color-principal); margin-bottom: 15px;"></i>
-                    <h5>Escríbenos</h5>
-                    <p style="color: var(--color-gris); font-size: 14px; margin: 0;">
-                        info@colegiopublico.edu.pe
                     </p>
                 </div>
             </div>

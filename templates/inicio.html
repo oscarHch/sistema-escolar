@@ -5,100 +5,189 @@
 {% block content %}
 
 <!-- Carousel de Imagenes -->
-<!-- 1920 x 600 px (Relación 16:5) ← LA MEJOR OPCIÓN -->
+<!-- 1920 x 600 px (Relación 16:5) -->
 <div id="carouselInicio" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="0" class="active" style="width: 10px; height: 10px; border-radius: 50%; opacity: 0.6; transition: all 0.3s;"></button>
-        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="1" style="width: 10px; height: 10px; border-radius: 50%; opacity: 0.6; transition: all 0.3s;"></button>
-        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="2" style="width: 10px; height: 10px; border-radius: 50%; opacity: 0.6; transition: all 0.3s;"></button>
+        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="2"></button>
     </div>
     
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="static/img/banner/Banner1.jpg" alt="Banner 1">
+            <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-                <h2>Bienvenidos a todos</h2>
-                <p>Educación de calidad para todos</p>
+                <div class="carousel-content">
+                    <h1 class="carousel-title">Bienvenidos a todos</h1>
+                    <p class="carousel-text">Educación de calidad para todos</p>
+                    <a href="{{ url_for('registro') }}" class="carousel-btn">
+                        Inscríbete Ahora <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
             <img src="static/img/banner/Banner2.jpg" alt="Banner 2">
+            <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-                <h2>Excelencia académica</h2>
-                <p>Docentes calificados y comprometidos</p>
+                <div class="carousel-content">
+                    <h1 class="carousel-title">Excelencia Académica</h1>
+                    <p class="carousel-text">Docentes calificados y comprometidos</p>
+                    <a href="{{ url_for('docentes') }}" class="carousel-btn">
+                        Conoce a Nuestros Docentes <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="carousel-item">
             <img src="static/img/banner/Banner3.png" alt="Banner 3">
+            <div class="carousel-overlay"></div>
             <div class="carousel-caption">
-                <h2>La carolina</h2>
-                <p>Espacios diseñados para el aprendizaje</p>
+                <div class="carousel-content">
+                    <h1 class="carousel-title">La Carolina</h1>
+                    <p class="carousel-text">Espacios diseñados para el aprendizaje</p>
+                    <a href="{{ url_for('servicios') }}" class="carousel-btn">
+                        Ver Instalaciones <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
-        <i class="bi bi-chevron-left fs-2 bg-dark bg-opacity-60 text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center"></i>
+        <span class="carousel-control-icon">
+            <i class="bi bi-chevron-left"></i>
+        </span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
-        <i class="bi bi-chevron-right fs-2 bg-dark bg-opacity-60 text-white rounded-circle p-3 d-inline-flex align-items-center justify-content-center"></i>
+        <span class="carousel-control-icon">
+            <i class="bi bi-chevron-right"></i>
+        </span>
     </button>
 </div>
 
-<section class="seccion">
+<!-- COMUNICADOS -->
+<section style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); padding: 20px 0;">
     <div class="contenedor">
-        <h2 class="titulo-seccion">Sobre nosotros</h2>
-        
-        <p style="max-width: 700px; margin: 0 auto 50px; text-align: center; font-size: 16px; color: #6b7280;">
-            En la I.E. 1045 Nuestra Señora de Fátima, nos dedicamos a brindar una educación integral que fomenta el desarrollo académico, social y emocional.
-        </p>
-        
-        <div class="grid-3" style="margin-bottom: 60px;">
-            <!-- Misión -->
-            <div class="tarjeta" style="text-align: center; border: none;">
-                <div class="icono-circular icono-primario" style="margin-bottom: 20px;">
-                    <i class="bi bi-rocket"></i>
+        <div style="background-color: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <div style="display: flex; align-items: start; gap: 20px;">
+                <div style="flex-shrink: 0;">
+                    <div style="width: 60px; height: 60px; background-color: #fee2e2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-megaphone-fill" style="font-size: 28px; color: #dc2626;"></i>
+                    </div>
                 </div>
-                <h3 style="margin-bottom: 15px; font-size: 18px;">Nuestra Misión</h3>
-                <p style="color: #6b7280; font-size: 14px; line-height: 1.7;">
-                    Brindar educación de calidad integral que desarrolle competencias académicas y valores en nuestros estudiantes.
-                </p>
-            </div>
-            
-            <!-- Visión -->
-            <div class="tarjeta" style="text-align: center; border: none;">
-                <div class="icono-circular icono-exito" style="margin-bottom: 20px;">
-                    <i class="bi bi-eye"></i>
+                <div style="flex: 1;">
+                    <h3 style="color: #dc2626; margin-bottom: 10px; font-size: 20px;">
+                        <i class="bi bi-exclamation-triangle-fill"></i> COMUNICADO IMPORTANTE
+                    </h3>
+                    <p style="color: var(--color-texto); font-size: 16px; line-height: 1.6; margin-bottom: 15px;">
+                        <strong>Proceso de Matrícula 2025:</strong> Informamos a todos los padres de familia que el proceso de matrícula para el año escolar 2025 estará abierto del 15 al 31 de enero. Los documentos requeridos se encuentran en la sección de Documentos.
+                    </p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="{{ url_for('documentos') }}" class="boton boton-primario">
+                            <i class="bi bi-file-text"></i> Ver Documentos
+                        </a>
+                        <a href="{{ url_for('registro') }}" class="boton boton-terciario">
+                            <i class="bi bi-pencil-square"></i> Inscribirse Ahora
+                        </a>
+                    </div>
                 </div>
-                <h3 style="margin-bottom: 15px; font-size: 18px;">Nuestra Visión</h3>
-                <p style="color: #6b7280; font-size: 14px; line-height: 1.7;">
-                    Ser una institución reconocida por excelencia educativa y formación integral de ciudadanos comprometidos.
-                </p>
             </div>
-            
-            <!-- Valores -->
-            <div class="tarjeta" style="text-align: center; border: none;">
-                <div class="icono-circular icono-advertencia" style="margin-bottom: 20px;">
-                    <i class="bi bi-heart-fill"></i>
-                </div>
-                <h3 style="margin-bottom: 15px; font-size: 18px;">Nuestros Valores</h3>
-                <p style="color: #6b7280; font-size: 14px; line-height: 1.7;">
-                    Respeto, responsabilidad, solidaridad y excelencia en todo lo que hacemos.
-                </p>
-            </div>
-        </div>
-        
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="{{ url_for('niveles') }}" class="boton boton-primario boton-grande">
-                <i class="bi bi-building"></i> Conoce Nuestros Niveles
-            </a>
-            <a href="{{ url_for('servicios') }}" class="boton boton-exito boton-grande">
-                <i class="bi bi-gear-fill"></i> Nuestros Servicios
-            </a>
         </div>
     </div>
 </section>
 
+<section class="seccion">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Sobre Nosotros</h2>
+        
+        <div class="grid-2" style="align-items: start; gap: 50px;">
+            <div>
+                <p style="font-size: 16px; color: #6b7280; line-height: 1.8; margin-bottom: 40px;">
+                    En la I.E. 1045 Nuestra Señora de Fátima, nos dedicamos a brindar una educación integral que fomenta el desarrollo académico, social y emocional.
+                </p>
+                
+                <!-- Misión -->
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: start; gap: 15px;">
+                        <div class="icono-circular icono-primario" style="width: 60px; height: 60px; flex-shrink: 0;">
+                            <i class="bi bi-rocket" style="font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px; font-size: 18px; color: var(--color-principal);">Nuestra Misión</h3>
+                            <p style="color: #6b7280; font-size: 14px; line-height: 1.7; margin: 0;">
+                                Brindar educación de calidad integral que desarrolle competencias académicas y valores en nuestros estudiantes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visión -->
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: start; gap: 15px;">
+                        <div class="icono-circular icono-exito" style="width: 60px; height: 60px; flex-shrink: 0;">
+                            <i class="bi bi-eye" style="font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px; font-size: 18px; color: var(--color-exito);">Nuestra Visión</h3>
+                            <p style="color: #6b7280; font-size: 14px; line-height: 1.7; margin: 0;">
+                                Ser una institución reconocida por excelencia educativa y formación integral de ciudadanos comprometidos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Valores -->
+                <div style="margin-bottom: 30px;">
+                    <div style="display: flex; align-items: start; gap: 15px;">
+                        <div class="icono-circular icono-advertencia" style="width: 60px; height: 60px; flex-shrink: 0;">
+                            <i class="bi bi-heart-fill" style="font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin-bottom: 10px; font-size: 18px; color: var(--color-amarillo);">Nuestros Valores</h3>
+                            <p style="color: #6b7280; font-size: 14px; line-height: 1.7; margin: 0;">
+                                Respeto, responsabilidad, solidaridad y excelencia en todo lo que hacemos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 40px;">
+                    <a href="{{ url_for('niveles') }}" class="boton boton-primario">
+                        <i class="bi bi-building"></i> Nuestros Niveles
+                    </a>
+                    <a href="{{ url_for('servicios') }}" class="boton boton-secundario">
+                        <i class="bi bi-gear-fill"></i> Servicios
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Video -->
+            <div>
+                <div class="tarjeta" style="padding: 0; overflow: hidden; border-radius: 16px;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                                src="https://www.youtube.com/embed/TU_VIDEO_ID_AQUI" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div style="padding: 20px; text-align: center; background-color: var(--color-gris-claro);">
+                        <h4 style="margin: 0; color: var(--color-texto);">
+                            <i class="bi bi-play-circle-fill" style="color: var(--color-principal);"></i>
+                            Conoce Nuestra Institución
+                        </h4>
+                        <p style="margin: 10px 0 0; color: var(--color-gris); font-size: 14px;">
+                            Tour virtual por nuestras instalaciones
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Ultimas Noticias -->
 <!-- 800 x 450 px (Relación 16:9)

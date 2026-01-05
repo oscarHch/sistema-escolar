@@ -301,6 +301,28 @@ body {
     box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
 }
 
+.boton-secundario {
+    background-color: var(--color-exito);
+    color: white;
+}
+
+.boton-secundario:hover {
+    background-color: #008f18;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(87, 244, 66, 0.3);
+}
+
+.boton-terciario {
+    background-color: #dc2626;
+    color: white;
+}
+
+.boton-terciario:hover {
+    background-color: #be1a1a;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(244, 66, 66, 0.3);
+}
+
 .boton-grande {
     padding: 14px 32px;
     font-size: 16px;
@@ -381,6 +403,7 @@ body {
 /* ===== CAROUSEL ===== */
 .carousel-item {
     height: 650px;
+    position: relative;
 }
 
 .carousel-item img {
@@ -389,22 +412,202 @@ body {
     object-fit: cover;
 }
 
+/* Overlay oscuro sutil */
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+}
+
+/* Contenedor del texto */
 .carousel-caption {
-    color: var(--color-texto);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 2rem;
-    max-width: 600px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 80px 20px;
+    text-align: left;
+    color: white;
+}
+
+.carousel-content {
+    max-width: 1200px;
     margin: 0 auto;
-    bottom: 55px;
 }
 
-.carousel-caption h2{
-    font-weight: bold;
+/* Título del carousel */
+.carousel-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease;
 }
 
-.carousel-caption p {
-    margin-bottom: 0;
+/* Texto del carousel */
+.carousel-text {
+    font-size: 20px;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* Botón del carousel */
+.carousel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background-color: white;
+    color: var(--color-principal);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.carousel-btn i {
+    transition: transform 0.3s ease;
+}
+
+.carousel-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Indicadores */
+.carousel-indicators {
+    bottom: 10px;
+    z-index: 3;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    margin: 0 6px;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+    background-color: white;
+    width: 40px;
+    border-radius: 10px;
+}
+
+/* Flechas de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    margin: 1.5rem;
+    width: auto;
+    z-index: 3;
+}
+
+.carousel-control-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-control-icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.carousel-control-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 500px;
+    }
+    
+    .carousel-caption {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .carousel-title {
+        font-size: 32px;
+    }
+    
+    .carousel-text {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .carousel-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-control-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control-icon i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        height: 400px;
+    }
+    
+    .carousel-title {
+        font-size: 28px;
+    }
+    
+    .carousel-text {
+        font-size: 14px;
+    }
 }
 
 /* ===== BADGES ===== */
