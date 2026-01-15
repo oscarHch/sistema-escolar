@@ -1,116 +1,311 @@
 {% extends "base.html" %}
 
-{% block title %}Inscripción - Colegio Público{% endblock %}
+{% block title %}Solicitud de Matrícula - Colegio Público{% endblock %}
 
 {% block content %}
 
 <!-- Banner -->
 <div class="banner">
-    <h1>Formulario de Inscripción</h1>
-    <p>Completa el formulario y nos contactaremos contigo</p>
+    <h1>Solicitud de Matrícula 2026</h1>
+    <p>Completa el formulario con los datos solicitados</p>
 </div>
 
 <!-- Formulario -->
 <section class="seccion">
     <div class="contenedor">
-        <div style="max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 900px; margin: 0 auto;">
             <div class="tarjeta">
                 <div class="texto-centro" style="margin-bottom: 30px;">
                     <img src="{{ url_for('static', filename='img/insignia_v2.jpg') }}" 
                         alt="Insignia del Colegio" 
                         style="width: 120px; margin-bottom: 0;">
-                    <h2 style="margin-top: 20px; margin-bottom: 10px;">Solicitud de Información</h2>
-                    <p style="color: var(--color-gris);">Todos los campos son obligatorios</p>
+                    <h2 style="margin-top: 20px; margin-bottom: 10px;">Formulario de Solicitud de Matrícula</h2>
+                    <p style="color: var(--color-gris);">Año Escolar 2026 • Todos los campos son obligatorios</p>
                 </div>
 
-                <form method="POST" action="{{ url_for('registro') }}">
-                    <!-- Nombre del Padre -->
-                    <div class="campo-formulario">
-                        <label>
-                            <i class="bi bi-person-fill" style="color: var(--color-principal);"></i>
-                            Nombre completo del APODERADO
-                        </label>
-                        <input type="text" name="nombre_padre" 
-                                placeholder="Ej: Juan Carlos Pérez López" required>
+                <form method="POST" action="{{ url_for('registro') }}" enctype="multipart/form-data" id="formularioMatricula">
+                    
+                    <!-- ========== SECCIÓN 1: DATOS DEL APODERADO ========== -->
+                    <div style="background-color: var(--color-gris-claro); padding: 15px; border-radius: 8px; margin-bottom: 25px;">
+                        <h4 style="margin: 0; color: var(--color-principal); text-align: center;">
+                            Datos del Apoderado
+                        </h4>
                     </div>
 
-                    <!-- Nombre del Alumno -->
-                    <div class="campo-formulario">
-                        <label>
-                            <i class="bi bi-person-badge-fill" style="color: var(--color-principal);"></i>
-                            Nombre completo del ALUMNO
-                        </label>
-                        <input type="text" name="nombre_alumno" 
-                                placeholder="Ej: María Pérez García" required>
+                    <div class="grid-2">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-card-text" style="color: var(--color-principal);"></i>
+                                DNI del Apoderado *
+                            </label>
+                            <input type="text" name="apoderado_dni" class="mayuscula"
+                                    placeholder="12345678" 
+                                    pattern="[0-9]{8}" 
+                                    maxlength="8"
+                                    title="Ingrese 8 dígitos" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-telephone-fill" style="color: var(--color-principal);"></i>
+                                Teléfono *
+                            </label>
+                            <input type="tel" name="apoderado_telefono"
+                                    placeholder="987654321" 
+                                    pattern="[0-9]{9}" 
+                                    maxlength="9"
+                                    title="Ingrese 9 dígitos" required>
+                        </div>
                     </div>
 
-                    <!-- Grado de Interés -->
-                    <div class="campo-formulario">
-                        <label>
-                            <i class="bi bi-mortarboard-fill" style="color: var(--color-principal);"></i>
-                            Grado solicitado
-                        </label>
-                        <select name="grado" required>
-                            <option value="" disabled selected>Seleccione un grado...</option>
-                            <optgroup label="Nivel Inicial">
-                                <option value="inicial-3">3 años</option>
-                                <option value="inicial-4">4 años</option>
-                                <option value="inicial-5">5 años</option>
-                            </optgroup>
-                            <optgroup label="Nivel Primaria">
-                                <option value="primaria-1">1er Grado</option>
-                                <option value="primaria-2">2do Grado</option>
-                                <option value="primaria-3">3er Grado</option>
-                                <option value="primaria-4">4to Grado</option>
-                                <option value="primaria-5">5to Grado</option>
-                                <option value="primaria-6">6to Grado</option>
-                            </optgroup>
-                        </select>
+                    <div class="grid-4">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-person-fill" style="color: var(--color-principal);"></i>
+                                Nombres *
+                            </label>
+                            <input type="text" name="apoderado_nombres" class="mayuscula"
+                                    placeholder="JUAN CARLOS" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                Apellido Paterno *
+                            </label>
+                            <input type="text" name="apoderado_apellido_paterno" class="mayuscula"
+                                    placeholder="PÉREZ" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                Apellido Materno *
+                            </label>
+                            <input type="text" name="apoderado_apellido_materno" class="mayuscula"
+                                    placeholder="LÓPEZ" required>
+                        </div>
                     </div>
 
-                    <!-- Teléfono -->
                     <div class="campo-formulario">
                         <label>
-                            <i class="bi bi-telephone-fill" style="color: var(--color-principal);"></i>
-                            Teléfono de contacto
+                            <i class="bi bi-envelope-fill" style="color: var(--color-principal);"></i>
+                            Correo Electrónico *
                         </label>
-                        <input type="tel" name="telefono" 
-                                placeholder="Ej: 987654321" 
-                                pattern="[0-9]{9}" 
-                                title="Ingrese 9 dígitos" required>
-                        <small style="color: var(--color-gris); display: block; margin-top: 5px;">
-                            Ingrese un número de 9 dígitos
-                        </small>
+                        <input type="email" name="apoderado_correo"
+                                placeholder="ejemplo@correo.com" required>
                     </div>
 
-                    <!-- Mensaje -->
+                    <div class="grid-2">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-house-fill" style="color: var(--color-principal);"></i>
+                                Dirección *
+                            </label>
+                            <input type="text" name="apoderado_direccion" class="mayuscula"
+                                    placeholder="AV. EDUCACIÓN 123" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-geo-alt-fill" style="color: var(--color-principal);"></i>
+                                Distrito *
+                            </label>
+                            <input type="text" name="apoderado_distrito" class="mayuscula"
+                                    placeholder="SAN ISIDRO" required>
+                        </div>
+                    </div>
+
+                    <!-- ========== SECCIÓN 2: DATOS DEL ALUMNO ========== -->
+                    <div style="background-color: var(--color-gris-claro); padding: 15px; border-radius: 8px; margin-bottom: 25px; margin-top: 40px;">
+                        <h4 style="margin: 0; color: var(--color-principal); text-align: center;">
+                            Datos del Alumno
+                        </h4>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-card-text" style="color: var(--color-principal);"></i>
+                                DNI del Alumno *
+                            </label>
+                            <input type="text" name="alumno_dni" class="mayuscula"
+                                    placeholder="87654321" 
+                                    pattern="[0-9]{8}" 
+                                    maxlength="8"
+                                    title="Ingrese 8 dígitos" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-calendar-fill" style="color: var(--color-principal);"></i>
+                                Fecha de Nacimiento *
+                            </label>
+                            <input type="date" name="alumno_fecha_nacimiento" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-4">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-person-fill" style="color: var(--color-principal);"></i>
+                                Nombres *
+                            </label>
+                            <input type="text" name="alumno_nombres" class="mayuscula"
+                                    placeholder="MARÍA" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                Apellido Paterno *
+                            </label>
+                            <input type="text" name="alumno_apellido_paterno" class="mayuscula"
+                                    placeholder="PÉREZ" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                Apellido Materno *
+                            </label>
+                            <input type="text" name="alumno_apellido_materno" class="mayuscula"
+                                    placeholder="GARCÍA" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-3">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-gender-ambiguous" style="color: var(--color-principal);"></i>
+                                Sexo *
+                            </label>
+                            <select name="alumno_sexo" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="M">MASCULINO</option>
+                                <option value="F">FEMENINO</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-people-fill" style="color: var(--color-principal);"></i>
+                                Parentesco *
+                            </label>
+                            <select name="alumno_parentesco" class="mayuscula" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="PADRE">PADRE</option>
+                                <option value="MADRE">MADRE</option>
+                                <option value="ABUELO/A">ABUELO/A</option>
+                                <option value="TÍO/A">TÍO/A</option>
+                                <option value="HERMANO/A">HERMANO/A</option>
+                                <option value="TUTOR LEGAL">TUTOR LEGAL</option>
+                                <option value="OTRO">OTRO</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-mortarboard-fill" style="color: var(--color-principal);"></i>
+                                Grado Solicitado *
+                            </label>
+                            <select name="grado" required>
+                                <option value="" disabled selected>Seleccione...</option>
+                                <optgroup label="NIVEL INICIAL">
+                                    <option value="3 AÑOS">3 AÑOS</option>
+                                    <option value="4 AÑOS">4 AÑOS</option>
+                                    <option value="5 AÑOS">5 AÑOS</option>
+                                </optgroup>
+                                <optgroup label="NIVEL PRIMARIA">
+                                    <option value="PRIMERO">PRIMERO</option>
+                                    <option value="SEGUNDO">SEGUNDO</option>
+                                    <option value="TERCERO">TERCERO</option>
+                                    <option value="CUARTO">CUARTO</option>
+                                    <option value="QUINTO">QUINTO</option>
+                                    <option value="SEXTO">SEXTO</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-house-fill" style="color: var(--color-principal);"></i>
+                                Dirección del Alumno *
+                            </label>
+                            <input type="text" name="alumno_direccion" class="mayuscula"
+                                    placeholder="AV. EDUCACIÓN 123" required>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label>
+                                <i class="bi bi-geo-alt-fill" style="color: var(--color-principal);"></i>
+                                Distrito *
+                            </label>
+                            <input type="text" name="alumno_distrito" class="mayuscula"
+                                    placeholder="SAN ISIDRO" required>
+                        </div>
+                    </div>
+
+                    <!-- Discapacidad -->
                     <div class="campo-formulario">
-                        <label>
-                            <i class="bi bi-chat-left-text-fill" style="color: var(--color-principal);"></i>
-                            Mensaje adicional
-                        </label>
-                        <textarea name="mensaje" rows="5" 
-                                placeholder="Cuéntanos sobre tu interés en nuestro colegio, horarios preferidos, o cualquier consulta adicional..." 
-                                required></textarea>
-                    </div>
-
-                    <!-- Términos -->
-                    <div style="margin-bottom: 25px;">
-                        <label style="display: flex; align-items: start; cursor: pointer;">
-                            <input type="checkbox" required 
-                                    style="margin-right: 10px; margin-top: 4px; width: 18px; height: 18px;">
-                            <span style="color: var(--color-gris); font-size: 14px;">
-                                Acepto que el colegio se contacte conmigo y he leído el 
-                                <a href="{{ url_for('documentos') }}" target="_blank" 
-                                    style="color: var(--color-principal); text-decoration: underline;">Reglamento Interno</a>
+                        <label style="display: flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" name="tiene_discapacidad" id="checkDiscapacidad"
+                                    style="margin-right: 10px; width: 18px; height: 18px;">
+                            <span>
+                                <i class="bi bi-heart-pulse-fill" style="color: var(--color-principal);"></i>
+                                El alumno tiene alguna discapacidad
                             </span>
                         </label>
                     </div>
 
-                    <!-- Botón -->
+                    <div class="campo-formulario" id="detalleDiscapacidad" style="display: none;">
+                        <label>
+                            Detalle de la discapacidad *
+                        </label>
+                        <textarea name="detalle_discapacidad" class="mayuscula" rows="3"
+                                    placeholder="DESCRIBA LA DISCAPACIDAD DEL ALUMNO"></textarea>
+                    </div>
+
+                    <!-- ========== SECCIÓN 3: DOCUMENTOS ========== -->
+                    <div style="background-color: var(--color-gris-claro); padding: 15px; border-radius: 8px; margin-bottom: 25px; margin-top: 40px;">
+                        <h4 style="margin: 0; color: var(--color-principal); text-align: center;">
+                            Documentos Requeridos
+                        </h4>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label>
+                            <i class="bi bi-cloud-upload-fill" style="color: var(--color-principal);"></i>
+                            Subir Documentos (PDF, JPG, PNG) *
+                        </label>
+                        <input type="file" name="documentos" multiple accept=".pdf,.jpg,.jpeg,.png" required
+                                style="padding: 10px;">
+                        <small style="color: var(--color-gris); display: block; margin-top: 8px;">
+                            <i class="bi bi-info-circle"></i> 
+                            Puedes seleccionar múltiples archivos a la vez. Máximo 5MB por archivo.
+                        </small>
+                        <small style="color: var(--color-gris); display: block; margin-top: 5px;">
+                            <strong>Documentos necesarios:</strong> DNI del alumno, DNI del apoderado, partida de nacimiento, foto del alumno.
+                        </small>
+                    </div>
+
+                    <!-- ========== SECCIÓN 4: TÉRMINOS ========== -->
+                    <div style="margin: 30px 0 25px 0;">
+                        <label style="display: flex; align-items: start; cursor: pointer;">
+                            <input type="checkbox" required 
+                                    style="margin-right: 10px; margin-top: 4px; width: 18px; height: 18px;">
+                            <span style="color: var(--color-gris); font-size: 14px;">
+                                Declaro que la información proporcionada es verídica y acepto que el colegio se contacte conmigo. 
+                                He leído el 
+                                <a href="{{ url_for('documentos') }}" target="_blank" 
+                                    style="color: var(--color-principal); text-decoration: underline;">Reglamento Interno</a>.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Botón de Envío -->
                     <button type="submit" class="boton boton-primario boton-grande" 
                             style="width: 100%; font-size: 18px;">
-                        Enviar Solicitud
+                        <i class="bi bi-check-circle-fill"></i>
+                        Enviar Solicitud de Matrícula
                     </button>
                 </form>
             </div>
@@ -148,15 +343,15 @@
                     1
                 </div>
                 <h5>Solicitud</h5>
-                <p style="color: var(--color-gris); font-size: 14px;">Completa el formulario de inscripción</p>
+                <p style="color: var(--color-gris); font-size: 14px;">Completa el formulario con tus datos y documentos</p>
             </div>
             
             <div class="texto-centro">
                 <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--color-exito); color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; margin: 0 auto 20px;">
                     2
                 </div>
-                <h5>Contacto</h5>
-                <p style="color: var(--color-gris); font-size: 14px;">Nos comunicaremos en 24-48 horas</p>
+                <h5>Revisión</h5>
+                <p style="color: var(--color-gris); font-size: 14px;">Validamos los documentos en 24-48 horas</p>
             </div>
             
             <div class="texto-centro">
@@ -172,10 +367,12 @@
                     4
                 </div>
                 <h5>Matrícula</h5>
-                <p style="color: var(--color-gris); font-size: 14px;">Entrega de documentos y oficialización</p>
+                <p style="color: var(--color-gris); font-size: 14px;">Formalización y asignación de vacante</p>
             </div>
         </div>
     </div>
 </section>
+
+<script src="{{ url_for('static', filename='js/registro.js') }}"></script>
 
 {% endblock %}

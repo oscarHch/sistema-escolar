@@ -548,6 +548,29 @@ body {
     color: white;
 }
 
+.grid-direccion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 350px));
+    gap: 30px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .grid-direccion {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-direccion {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
 /* Animación */
 @keyframes fadeInUp {
     from {
